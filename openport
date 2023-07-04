@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -z "${1}" ]
+then
+	sudo ufw allow $1
+	sudo firewall-cmd --add-port=$1/tcp
+else
+	echo "Please provide a port number to open."
+fi

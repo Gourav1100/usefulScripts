@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -z "${1}" ]
+then
+	sudo ufw deny $1
+	sudo firewall-cmd --remove-port=$1/tcp
+else
+	echo "Please provide a port number to close."
+fi
